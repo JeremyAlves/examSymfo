@@ -16,7 +16,7 @@ class AppController extends AbstractController
     {
         $countrys = $countryRepository->findAll();
         return $this->render('app/index.html.twig', [
-            'countrys' => $this->getDoctrine()->getRepository(Country::class)->findAll(),
+            'countrys' => $this->getDoctrine()->getRepository(Country::class)->OrderCrs(),
         ]);
     }
 }

@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Informations{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center my-3">Informations du pays : {{ country.name }}</h1>
+
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th class="text-center">Contaminé</th>
+            <th class="text-center">Soigné</th>
+            <th class="text-center">Zombifié</th>
+            <th class="text-center">Date d'entrée</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for stat in country.stats %}
+        <tr>
+            <td class="text-center">{{ stat.contaminated }}</td>
+            <td class="text-center">{{ stat.healed }}</td>
+            <td class="text-center">{{ stat.zombified }}</td>
+            <td class="text-center">{{ stat.statDate | date("m/d/Y") }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td class="text-center"><b>Pas de donnée pour ce pays pour le moment</b></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock body %}

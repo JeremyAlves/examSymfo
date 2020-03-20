@@ -36,6 +36,14 @@ class CountryRepository extends ServiceEntityRepository
     }
     */
 
+    public function OrderCrs()
+    {
+        return $this->createQueryBuilder('r')
+            ->orderBy('r.name', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
     /*
     public function findOneBySomeField($value): ?Country
     {

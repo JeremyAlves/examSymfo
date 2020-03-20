@@ -4,26 +4,34 @@
 
 {% block body %}
 
-<div class="text-center">
+<div class="text-center my-3">
 <h1>Liste des pays</h1>
 </div>
 
 <table class="table mt-5">
     <thead>
         <tr>
-            <th>#</th>
-            <th>Pays</th>
+            <th class="text-center">#</th>
+            <th class="text-center">Pays</th>
+            <th class="text-center">Informations</th>
+            <th class="text-center"> Total de Contaminé</th>
+            <th class="text-center"> Total de Guéris</th>
+            <th class="text-center"> Total de Zombifiés</th>
         </tr>
     </thead>
     <tbody>
     {% for country in countrys %}
         <tr>
-            <td>{{ country.id }}</td>
-            <td>{{ country.name }}</td>
+            <td class="text-center">{{ country.id }}</td>
+            <td class="text-center">{{ country.name }}</td>
+            <td class="text-center"><a href="{{path("country_show", { 'country' : country.id })}}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+            <td class="text-center">{{ country.Contaminated }}</td>
+            <td class="text-center">{{ country.Healed }}</td>
+            <td class="text-center">{{ country.Zombified }}</td>
         </tr>
     {% else %}
         <tr>
-            <td colspan="3">no records found</td>
+            <td colspan="3">Pas de pays enregistrés</td>
         </tr>
     {% endfor %}
     </tbody>
