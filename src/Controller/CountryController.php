@@ -39,7 +39,7 @@ public function new(Request $request)
         $entityManager->persist($country);
         $entityManager->flush();
 
-        return $this->redirectToRoute('country_index');
+        return $this->redirectToRoute('app_index');
     }
 
     return $this->render('country/form.html.twig', [

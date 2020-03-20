@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une statistique{% endblock %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+        <button class="btn btn-success">Ajouter une statistique</button>
+    {{ form_end(form) }}
+
+{% endblock %}

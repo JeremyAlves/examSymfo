@@ -12,11 +12,11 @@ class CountryFixtures extends Fixture
 {
     // Tableau des choses à ajouter
     $tab = array(
-        array('title' => 'france'),
-        array('title' => 'italie'),
-        array('title' => 'allemagne'),
-        array('title' => 'espagne'),
-        array('title' => 'royaume-uni'),
+        array('title' => 'France'),
+        array('title' => 'Italie'),
+        array('title' => 'Allemagne'),
+        array('title' => 'Espagne'),
+        array('title' => 'Royaume-uni'),
     );
 
     foreach($tab as $row)
