@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un pays{% endblock %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+        <button class="btn btn-success">Ajouter un pays</button>
+    {{ form_end(form) }}
+
+{% endblock %}
