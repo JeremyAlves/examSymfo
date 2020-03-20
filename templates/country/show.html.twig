@@ -19,7 +19,11 @@
         {% for stat in country.stats %}
         <tr>
             <td class="text-center">{{ stat.contaminated }}</td>
-            <td class="text-center">{{ stat.healed }}</td>
+            {% if stat.healed > stat.zombified %}
+            <td class="text-center" style="background-color: rgb(16, 202, 16);">{{ stat.healed }}</td>
+            {% else %}
+            <td class="text-center" style="background-color: rgb(255, 38, 38);">{{ stat.healed }}</td>
+            {% endif %}
             <td class="text-center">{{ stat.zombified }}</td>
             <td class="text-center">{{ stat.statDate | date("m/d/Y") }}</td>
         </tr>

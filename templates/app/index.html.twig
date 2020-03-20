@@ -26,7 +26,11 @@
             <td class="text-center">{{ country.name }}</td>
             <td class="text-center"><a href="{{path("country_show", { 'country' : country.id })}}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
             <td class="text-center">{{ country.Contaminated }}</td>
-            <td class="text-center">{{ country.Healed }}</td>
+            {% if country.Healed > country.Zombified %}
+            <td class="text-center" style="background-color: rgb(12, 211, 12);">{{ country.Healed }}</td>
+            {% else %}
+            <td class="text-center" style="background-color: rgb(240, 37, 37);">{{ country.Healed }}</td>
+            {% endif %}
             <td class="text-center">{{ country.Zombified }}</td>
         </tr>
     {% else %}
@@ -36,5 +40,9 @@
     {% endfor %}
     </tbody>
 </table>
+
+<div>
+
+</div>
 
 {% endblock %}

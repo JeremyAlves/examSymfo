@@ -32,7 +32,7 @@ class StatType extends AbstractType
             ->add('zombified', IntegerType::class, [
                 'label' => 'Zombifié',
                 ])
-            ->add('stat_date', DateTimeType::class, ['label' => 'Date entrée'])
+            ->add('stat_date', DateType::class, ['label' => 'Date entrée'])
         ;
     }
 
